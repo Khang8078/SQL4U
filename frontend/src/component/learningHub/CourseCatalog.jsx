@@ -24,7 +24,7 @@ function Show({ arr }) {
       <div className="container grid2">
         {arr.map((val) => (
           <div key={val.id} className="items">
-            <div className="content flex">
+            <div className="content-flex">
               <div className="left">
                 <div className="img">
                   <img src={logo} alt="" />

@@ -15,5 +15,16 @@
     "cover": "./man-teacher.png",
     "tutorial": [],
     "projects":[]
-  }]}
+  },
+  {
+    "topic": "basic",
+    "name": "Git Tutorial",
+    "teacher": "by Kevin Skoglund",
+    "length": "2h 55m",
+    "cover": "./man-teacher.png",
+    "tutorial": [],
+    "projects":[]
+  }
+  ]
+}
     
