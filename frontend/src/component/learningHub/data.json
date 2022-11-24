@@ -24,6 +24,24 @@
     "cover": "./man-teacher.png",
     "tutorial": [],
     "projects":[]
+  },
+  {
+    "topic": "sql",
+    "name": "SQL Database",
+    "teacher": "by Michael Smith",
+    "length": "2h 55m",
+    "cover": "./man-teacher.png",
+    "tutorial": [],
+    "projects":[]
+  },
+  {
+    "topic": "nosql",
+    "name": "NoSQL",
+    "teacher": "by Michael Smith",
+    "length": "2h 55m",
+    "cover": "./man-teacher.png",
+    "tutorial": [],
+    "projects":[]
   }
   ]
 }
