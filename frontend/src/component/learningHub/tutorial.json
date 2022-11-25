@@ -352,9 +352,10 @@
         "detail":"Now let's see just how quick and easy it is to work with different branches, and how well it works.\nWe are currently on the branch hello-world-images. We added an image to this branch, so let's list the files in the current directory:\n\nExample\nls\nREADME.md  bluestyle.css  img_hello_world.jpg  index.html\nWe can see the new file img_hello_world.jpg, and if we open the html file, we can see the code has been altered. All is as it should be.\nNow, let's see what happens when we change branch to master\n\nExample\ngit checkout master\nSwitched to branch 'master'\nThe new image is not a part of this branch. List the files in the current directory again:\n\nExample\nls\nREADME.md  bluestyle.css  index.html\nimg_hello_world.jpg is no longer there! And if we open the html file, we can see the code reverted to what it was before the alteration.\nSee how easy it is to work with branches? And how this allows you to work on different things?"},
         { "header": "Emergency Branch",
         "detail":"Now imagine that we are not yet done with hello-world-images, but we need to fix an error on master.\nI don't want to mess with master directly, and I do not want to mess with hello-world-images, since it is not done yet.\nSo we create a new branch to deal with the emergency:\n\nExample\ngit checkout -b emergency-fix\nSwitched to a new branch 'emergency-fix'\nNow we have created a new branch from master, and changed to it. We can safely fix the error without disturbing the other branches.\nLet's fix our imaginary error:\n\n\nExample\n<!DOCTYPE html>\n<html>\n<head>\n<title>Hello World!</title>\n<link rel=stylesheet href=bluestyle.css>\n</head>\n<body>\n<h1>Hello world!</h1>\n<p>This is the first file in my new Git Repo.</p>\n<p>This line is here to show how merging works.</p>\n</body>\n</html>\nWe have made changes in this file, and we need to get those changes to the master branch.\nCheck the status:\n\nExample\ngit status\nOn branch emergency-fix\nChanges not staged for commit:\n  (use git add ... to update what will be committed)\n  (use git restore ... to discard changes in working directory)\n        modified:   index.html\nno changes added to commit (use git add and/or git commit -a)\nstage the file, and commit:\nExample\ngit add index.html\ngit commit -m updated index.html with emergency fix\n[emergency-fix dfa79db] updated index.html with emergency fix\n 1 file changed, 1 insertion(+), 1 deletion(-)\nNow we have a fix ready for master, and we need to merge the two branches.\n"}]},
+        
         {
-          "_id": "80201", 
-          "title": "NoSQL Tutorial: What is, Types of NoSQL Databases & Example",
+          "_id": "70101", 
+          "title": "NoSQL Tutorial: What is NoSQL",
           "contents": [
             { "header": "What is NoSQL?",
         "detail":"NoSQL Database is a non-relational Data Management System, that does not require a fixed schema. It avoids joins, and is easy to scale. The major purpose of using a NoSQL database is for distributed data stores with humongous data storage needs. NoSQL is used for Big data and real-time web apps. For example, companies like Twitter, Facebook and Google collect terabytes of user data every single day.\n\nNoSQL database stands for “Not Only SQL” or “Not SQL.” Though a better term would be “NoREL”, NoSQL caught on. Carl Strozz introduced the NoSQL concept in 1998.\n\nTraditional RDBMS uses SQL syntax to store and retrieve data for further insights. Instead, a NoSQL database system encompasses a wide range of database technologies that can store structured, semi-structured, unstructured and polymorphic data."},
@@ -364,8 +365,62 @@
         "detail":"+ 1998- Carlo Strozzi use the term NoSQL for his lightweight, open-source relational database\n+ 2000- Graph database Neo4j is launched\n+ 2004- Google BigTable is launched\n+ 2005- CouchDB is launched\n+ 2007- The research paper on Amazon Dynamo is released\n+ 2008- Facebooks open sources the Cassandra project\n+ 2009- The term NoSQL was reintroduced"},
         {"header":"Features of NoSQL",
         "detail":"Non-relational\n\t+ NoSQL databases never follow the relational model\n\t+ Never provide tables with flat fixed-column records\n\t+ Work with self-contained aggregates or BLOBs\n\t+ Doesn’t require object-relational mapping and data normalization\n\t+ No complex features like query languages, query planners,referential integrity joins, ACID\nSchema-free\t+ NoSQL databases are either schema-free or have relaxed schemas\t+ Do not require any sort of definition of the schema of the data\t+ Offers heterogeneous structures of data in the same domain\n\nSimple API\t+ Offers easy to use interfaces for storage and querying data provide\t+ APIs allow low-level data manipulation & selection method\t+ Text-based protocols mostly used with HTTP REST with JSO\t+ Mostly used no standard based NoSQL query languag\t+ Web-enabled databases running as internet-facing services\nDistributed\t+ Multiple NoSQL databases can be executed in a distributed fashio\t+ Offers auto-scaling and fail-over capabilitie\t+ Often ACID concept can be sacrificed for scalability and throughpu\t+ Mostly no synchronous replication between distributed nodes Asynchronous Multi-Master Replication, peer-to-peer, HDFS Replicatio\t+ Only providing eventual consistenc\t+ Shared Nothing Architecture. This enables less coordination and higher distribution."}
-          ]}
+          ]},
+          {
+            "_id": "70102", 
+            "title": "Types of NoSQL Databases",
+            "contents": [
+              {"header":" ",
+            "detail":"NoSQL Databases are mainly categorized into four types: Key-value pair, Column-oriented, Graph-based and Document-oriented. Every category has its unique attributes and limitations. None of the above-specified database is better to solve all the problems. Users should select the database based on their product needs.\nTypes of NoSQL Databases:\n\t + Key-value Pair Based\n\t + Column-oriented Graph\n\t + Graphs based\n\t + Document-oriented"},
+            {"header": "Key Value Pair Based",
+            "detail": "Data is stored in key/value pairs. It is designed in such a way to handle lots of data and heavy load.\nKey-value pair storage databases store data as a hash table where each key is unique, and the value can be a JSON, BLOB(Binary Large Objects), string, etc. It is one of the most basic NoSQL database example. This kind of NoSQL database is used as a collection, dictionaries, associative arrays, etc. Key value stores help the developer to store schema-less data. They work best for shopping cart contents.\nRedis, Dynamo, Riak are some NoSQL examples of key-value store DataBases. They are all based on Amazon’s Dynamo paper."},
+            {"header": "Column-based",
+            "detail":"Column-oriented databases work on columns and are based on BigTable paper by Google. Every column is treated separately. Values of single column databases are stored contiguously.\nThey deliver high performance on aggregation queries like SUM, COUNT, AVG, MIN etc. as the data is readily available in a column.\nColumn-based NoSQL databases are widely used to manage data warehouses, business intelligence, CRM, Library card catalogs\nHBase, Cassandra, HBase, Hypertable are NoSQL query examples of column based database."},
+            {"header": "Document-Oriented:",
+            "detail":"Document-Oriented NoSQL DB stores and retrieves data as a key value pair but the value part is stored as a document. The document is stored in JSON or XML formats. The value is understood by the DB and can be queried.\nIn this diagram on your left you can see we have rows and columns, and in the right, we have a document database which has a similar structure to JSON. Now for the relational database, you have to know what columns you have and so on. However, for a document database, you have data store like JSON object. You do not require to define which make it flexible.\nThe document type is mostly used for CMS systems, blogging platforms, real-time analytics & e-commerce applications. It should not use for complex transactions which require multiple operations or queries against varying aggregate structures\nAmazon SimpleDB, CouchDB, MongoDB, Riak, Lotus Notes, MongoDB, are popular Document originated DBMS systems."},
+            {"header": "Graph-Based",
+            "detail":"A graph type database stores entities as well the relations amongst those entities. The entity is stored as a node with the relationship as edges. An edge gives a relationship between nodes. Every node and edge has a unique identifier.\nCompared to a relational database where tables are loosely connected, a Graph database is a multi-relational in nature. Traversing relationship is fast as they are already captured into the DB, and there is no need to calculate them.\nGraph base database mostly used for social networks, logistics, spatial data.\nNeo4J, Infinite Graph, OrientDB, FlockDB are some popular graph-based databases."}
+]},
+{
+  "_id": "70103", 
+  "title": "Query Mechanism tools for NoSQL",
+  "contents": [
+    {"header":" ",
+    "detail":"The most common data retrieval mechanism is the REST-based retrieval of a value based on its key/ID with GET resource\nDocument store Database offers more difficult queries as they understand the value in a key-value pair. For example, CouchDB allows defining views with MapReduce"},
+    {"header":"What is the CAP Theorem? ",
+    "detail":"CAP theorem is also called brewer’s theorem. It states that is impossible for a distributed data store to offer more than two out of three guarantees\n1.Consistency\n2.Availability\n3.Partition Tolerance\n\nConsistency:\nThe data should remain consistent even after the execution of an operation. This means once data is written, any future read request should contain that data. For example, after updating the order status, all the clients should be able to see the same data.\n\nAvailability:\nThe database should always be available and responsive. It should not have any downtime.\n\nPartition Tolerance:\nPartition Tolerance means that the system should continue to function even if the communication among the servers is not stable. For example, the servers can be partitioned into multiple groups which may not communicate with each other. Here, if part of the database is unavailable, other parts are always unaffected."},
+    {"header":"Eventual Consistency ",
+    "detail":"The term “eventual consistency” means to have copies of data on multiple machines to get high availability and scalability. Thus, changes made to any data item on one machine has to be propagated to other replica\nData replication may not be instantaneous as some copies will be updated immediately while others in due course of time. These copies may be mutually, but in due course of time, they become consistent. Hence, the name eventual consistency.\nBASE: Basically Available, Soft state, Eventual consistency\n\t +Basically, available means DB is available all the time as per CAP theorem\n\t +Soft state means even without an input; the system state may change\n\t +Eventual consistency means that the system will become consistent over time"},
+    {"header":" ",
+    "detail":""}
+  ]},
+  {
+    "_id": "70103", 
+    "title": "Advantages & Disadvantages of NoSQL",
+    "contents": [
+      {"header":"Advantages of NoSQL",
+    "detail":"\n +Can be used as Primary or Analytic Data Source\n +Big Data Capability\n +No Single Point of Failure\n +Easy Replication\n +No Need for Separate Caching Layer\n +It provides fast performance and horizontal scalability.\n +Can handle structured, semi-structured, and unstructured data with equal effect\n +Object-oriented programming which is easy to use and flexible\n +NoSQL databases don’t need a dedicated high-performance server\n +Support Key Developer Languages and Platforms\n +Simple to implement than using RDBMS\n +It can serve as the primary data source for online applications.\n +Handles big data which manages data velocity, variety, volume, and complexity\n +Excels at distributed database and multi-data center operations\n +Eliminates the need for a specific caching layer to store data\n +Offers a flexible schema design which can easily be altered without downtime or service disruption"},
+    {"header":"Disadvantages of NoSQL ",
+    "detail":"\nNo standardization rules\nLimited query capabilities\nRDBMS databases and tools are comparatively mature\nIt does not offer any traditional database capabilities, like consistency when multiple transactions are performed simultaneously.\nWhen the volume of data increases it is difficult to maintain unique values as keys become difficult\nDoesn’t work as well with relational data\nThe learning curve is stiff for new developers\nOpen source options so not so popular for enterprises."}]
+  },
+  {
+    "_id": "70104", 
+    "title": "Conclusion",
+    "contents": [
+      {"header":"Summary",
+      "detail":"\n + NoSQL is a non-relational DMS, that does not require a fixed schema, avoids joins, and is easy to scale\n+ The concept of NoSQL databases became popular with Internet giants like Google, Facebook, Amazon, etc. who deal with huge volumes of data\n+ In the year 1998- Carlo Strozzi use the term NoSQL for his lightweight, open-source relational database\n+ NoSQL databases never follow the relational model it is either schema-free or has relaxed schemas\n+ Four types of NoSQL Database are 1). Key-value Pair Based 2). Column-oriented Graph 3). Graphs based 4). Document-oriented\n+ NOSQL can handle structured, semi-structured, and unstructured data with equal effect\n+ CAP theorem consists of three words Consistency, Availability, and Partition Tolerance\n+ BASE stands for Basically Available, Soft state, Eventual consistency\n+ The term “eventual consistency” means to have copies of data on multiple machines to get high availability and scalability\n+ NOSQL offer limited query capabilities"}
+    ]
+  },
+  {
+    "_id": "70104", 
+    "title": "Conclusion",
+    "contents": [
+      {"header":"Summary",
+      "detail":"\n + NoSQL is a non-relational DMS, that does not require a fixed schema, avoids joins, and is easy to scale\n+ The concept of NoSQL databases became popular with Internet giants like Google, Facebook, Amazon, etc. who deal with huge volumes of data\n+ In the year 1998- Carlo Strozzi use the term NoSQL for his lightweight, open-source relational database\n+ NoSQL databases never follow the relational model it is either schema-free or has relaxed schemas\n+ Four types of NoSQL Database are 1). Key-value Pair Based 2). Column-oriented Graph 3). Graphs based 4). Document-oriented\n+ NOSQL can handle structured, semi-structured, and unstructured data with equal effect\n+ CAP theorem consists of three words Consistency, Availability, and Partition Tolerance\n+ BASE stands for Basically Available, Soft state, Eventual consistency\n+ The term “eventual consistency” means to have copies of data on multiple machines to get high availability and scalability\n+ NOSQL offer limited query capabilities"}
+    ]
+  }
 ]}
+        
         
     
    
