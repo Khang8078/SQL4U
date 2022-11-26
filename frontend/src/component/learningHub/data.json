@@ -35,15 +35,6 @@
     "projects":[]
   },
   {
-    "topic": "sql",
-    "name": "Top Five Things to Know in SQL",
-    "teacher": "by Walter Shields",
-    "length": "2h 21m",
-    "cover": "./man-teacher.png",
-    "tutorial": [],
-    "projects":[]
-  },
-  {
     "topic": "nosql",
     "name": "NoSQL",
     "teacher": "by Michael Smith",
@@ -57,6 +48,24 @@
     "name": "MongoDB Tutorial",
     "teacher": "by Justin Jenkins",
     "length": "2h 44m",
+    "cover": "./man-teacher.png",
+    "tutorial": [],
+    "projects":[]
+  },
+  {
+    "topic": "relational",
+    "name": "Learning Relational Databases",
+    "teacher": "by Adam Wilbert",
+    "length": "2h 43m",
+    "cover": "./man-teacher.png",
+    "tutorial": [],
+    "projects":[]
+  },
+  {
+    "topic": "relational",
+    "name": "Relational Databases Essential Training",
+    "teacher": "by Adam Wilbert",
+    "length": "2h 12m",
     "cover": "./man-teacher.png",
     "tutorial": [],
     "projects":[]
