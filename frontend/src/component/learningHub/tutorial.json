@@ -628,6 +628,73 @@
           "detail": "+ Organize tables into a model of your system\n + Create relationships between entities\n + Get the draft down on paper so you can see the bigger picture"
         }
       ]
+    },
+    {
+      "_id": "30105",
+      "title": "Normalizing Your Data",
+      "contents": [
+        {
+          "header":"Identify key fields",
+          "detail":"Primary Keys:\n + Must be unique\n + Cannot be NULL\n + Must be given a value when the record is created"
+        },
+        {
+          "header":"Denormalization",
+          "detail":"Why Denormalize a Table?\n + Performance of the system\n + Historical data tracking"
+        },
+        {
+          "header": "",
+          "detail":""
+        }
+      ]
+    },
+    {
+      "_id": "30106",
+      "title": "Logical Design Considerations",
+      "contents": [{
+        "header":"Follow a naming convention",
+        "detail":"Naming Convention:\n + Documents the structure of the database\n + Helps others understand your design decisions\n\n For example:\n 1. Be Consistent:\n + First-Name, Last-Name, Department\n + FIRST_NAME, LAST_NAME, DEPARTMENT\n + FirstName, LastName, Department\n 2. Avoid Special Characters:\n + Don't use space in the table or field names\n + Use alphanumeric characters only\n + Don't use brackets or parenthesis\n 3.Know the Reserved Words:\n + Special lists of words that are used by DBMS\n + SELECT\n + CREATE\n + DATE, TIME, NAME, CHARACTER, GROUP\n + Review the list of your specific DBMS"
+      },
+      {
+        "header":"Data types and precision",
+        "detail":"Storing Text Data:\n + Allows alphanumeric characters and symbols\n + Options for small strings of characters or large blocks\n + Can also store text of a variable length or fixed length\n + SQL Server - varchar(50)\n + Microsoft Access\n\n Long Text Fields:\n + CLOB - character large objects\n + SQL Server - varchar(max)\n + Microsoft Access\n\n Numeric Data Can Also Be Text:\n + Phone numbers\n + ZIP codes\n + Any field that wouldn't involve a mathematical operation\n\n Storing Numbers as Numbers: \n Exact number \n + Whole or fractional values\n + Numeric, decimal, integer, bigint, or smallint\n Approximate numbers\n + Represent very large or vary small values\n + Float, real, single precision, or double precision\n\n    "
+      },
+      {
+        "header": "Apply integrity constraints",
+        "detail":"Controlling Data Input:\n Can implement through a related table\n + Used to look up valid inputs from a specific list\n + Includes all the possible responses to a field\n Create a check constraint\n + Built into the table structure itself\n + Also used to limit the entry to only approved responses.\n\n Controlling Numerical Input:\n + Numbers within an acceptable range\n + Controlling date entries\n + Dictated by the requirement gathering phas\n\n Required Fields:\n + Implemented with a NULL constraint\n + If required, the field must be NOT NULL\n + Determine usage from business rules"
+      },
+      {
+        "header": "Enforce referential integrity",
+        "detail":"Enforcing Referential Integrity:\n Relationship-level constraint\n + Data integrity rule\n + Prevents orphaned records from occurring"
+      },
+      {
+        "header": "Build indexes",
+        "detail":"Adding Too Many Indexes:\n + Slows down the write speed of the database\n + Every edit causes all of the indexes to be rebuilt\n + Searches still possible on non-indexed fields\n + Efficiencies depend on the size of the data tables"
+      }
+    ]
+    },
+    {
+      "_id": "30107",
+      "title": "Developing the Physical Database",
+      "contents": [{
+        "header": "Move from planning to construction",
+        "detail":"The Path to Construction:\n 1. Create a well-defined mission statement\n 2. Develop specific mission objectives\n 3. Identify actors and subject matter experts to interview\n 4. Create an initial list of data elements that will need to be stored in the database\n 5. Organize elements into tables to create a model\n 6. Add additional fields to support a good relational design\n 7. Consider naming conventions, data types, and constraints"
+      },
+      {
+        "header": "Introduction to Access",
+        "detail":"Create the tables in Access: https://support.microsoft.com/en-us/office/decide-whether-to-create-a-desktop-database-or-an-access-web-app-7bf7ccc9-0850-48f2-858f-273271d30fa0?wt.mc_id=otc_access# \n\n Establish relationships in Access: https://support.microsoft.com/en-us/office/video-get-started-with-table-relationships-728d53ff-f332-4ac6-9382-574ee271500a?wt.mc_id=otc_access# \n\n  "
+      },{
+        "header":"Write queries in Access",
+        "detail":"https://support.microsoft.com/en-us/office/video-get-started-with-queries-07e75b65-5eda-414f-b822-ea4e7aaf1ccb?wt.mc_id=otc_access#"
+      },
+      {
+        "header":"Write queries in Access",
+        "detail":"https://support.microsoft.com/en-us/office/video-get-started-with-queries-07e75b65-5eda-414f-b822-ea4e7aaf1ccb?wt.mc_id=otc_access#"
+      },
+      {
+        "header":"Add and edit",
+        "detail":"https://support.microsoft.com/en-us/office/video-copy-data-from-excel-b0bee2b9-e721-4332-869d-51fc9180f411?wt.mc_id=otc_access#"
+      }
+    ]
     }
   ]
 }
